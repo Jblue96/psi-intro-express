@@ -4,15 +4,22 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-var songData = [
-  {name: 'shake it off'},
-  {name: 'what is going on'}
-];
+
+
+
+
+      var songData = [
+        {name: 'shake it off'},
+        {name: 'what is going on'}
+      ];
+
+
+
 
 // middle ware that makes the files
 // in the public folder visible
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/song', function(req, res) {
   console.log('in get song route');
